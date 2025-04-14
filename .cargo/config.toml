@@ -1,0 +1,9 @@
+[build]
+target = "thumbv6m-none-eabi"
+
+[target.thumbv6m-none-eabi]
+runner = "probe-rs run --chip STM32G0B1RE"
+rustflags = [ "-Clink-arg=-Tlink.x", "-Clink-arg=-Tdefmt.x", "-Clink-args=-Map=build.map" ]
+
+[env]
+DEFMT_LOG = "info"
